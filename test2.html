@@ -48,14 +48,18 @@
 
 <script>
 
-   let tg = window.Telegram.WebApp;
+	let tg = window.Telegram.WebApp;
 
-   tg.expand();
+	tg.ready();
+
+	tg.expand();
   
-   tg.MainButton.setParams({
+	tg.MainButton.setParams({
                 text      : 'ГОТОВО',
                 is_visible: true
             });
+			
+	tg.MainButton.show();
 
 </script>
 </html>
