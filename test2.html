@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,18 +43,24 @@
 </head>
 
 <body>
-   <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
-   <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+   <button id="btn" class="button">Просто кнопка</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
 </body>
 
 <script>
 
-   let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+   let tg = window.Telegram.WebApp;
 
-   tg.expand(); //расширяем на все окно  
+   tg.expand();
+  
+   tg.MainButton.setParams({
+                text      : 'ГОТОВО',
+                is_visible: true
+            }).onClick(this_close());
 
-   tg.MainButton.setText("Готово"); //изменяем текст кнопки иначе
-   tg.MainButton.show()
+
+	function this_close() {
+        tg.close();
+    }
 
 </script>
 </html>
